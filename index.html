@@ -842,7 +842,7 @@ Your Mind is upgraded with specific modules:
       };
 
       const activeApiKey = document.getElementById('api-key-input').value.trim() || apiKey;
-      const apiEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${activeApiKey}`;
+      const apiEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${activeApiKey}`;
 
       try {
         let responseText = await callGeminiWithRetry(apiEndpoint, payload);
@@ -940,7 +940,7 @@ Your Mind is upgraded with specific modules:
     // Premium Cloud TTS sound generation
     async function playGeminiCloudTTS(text) {
       const activeApiKey = document.getElementById('api-key-input').value.trim() || apiKey;
-      const ttsUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${activeApiKey}`;
+      const ttsUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-tts:generateContent?key=${activeApiKey}`;
       
       const payload = {
         contents: [{ parts: [{ text: `Say cute: ${text}` }] }],
